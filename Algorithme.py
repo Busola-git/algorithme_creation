@@ -12,8 +12,7 @@ aapl = pickle.load(open('sp500_db/aapl.p', 'rb'))
 
 ## Study of P/E
 AAPL_PPS_2015=(aapl.incomestatement_annual['Net Income Applicable To Common Shares'][0])/(aapl.keystats['sharesout'])
-# AAPL_EPS_2015=
-
+AAPL_EPS_2015=(aapl.[''][0])/(aapl.keystats['sharesout'])
 
 pp(AAPL_PPS_2015)
 
