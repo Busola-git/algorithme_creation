@@ -1,31 +1,21 @@
 __author__ = 'Simon'
+
+## imports
 import pprint
 import pickle
 from yahoo_ff.database import stocks_database
 from yahoo_ff.yahoo_ff import yahoo_ff
 
-# shortcut for pprint
+## General
 pp = pprint.PrettyPrinter(indent=0).pprint
-
-# create database folder test_db
-# sp500 = stocks_database('sp500')
-
-# create aapl object linked to aapl.p
 aapl = pickle.load(open('sp500_db/aapl.p', 'rb'))
 
-# imprimer le dictionnaire infos de aapl
-pp(aapl.infos)
+## Study of P/E
+AAPL_PPS_2015=(aapl.incomestatement_annual['Net Income Applicable To Common Shares'][0])/(aapl.keystats['sharesout'])
+# AAPL_EPS_2015=
 
-# imprimer le dictionnaire infos de aapl
-pp(aapl.keystats)
 
-# imprimer la variable du dictionnarie de 'infos'  pour le terme 'industry'
-pp(aapl.infos['industry'])
+pp(AAPL_PPS_2015)
 
-pp(aapl.balancesheet_annual['Total Assets'])
-pp(aapl.incomestatement_annual['Income Before Tax'])
-
-# aapl = yahoo_ff('aapl')
-# pp.pprint(aapl.balancesheet_annual)
 
 
